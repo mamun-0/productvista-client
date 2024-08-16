@@ -1,0 +1,9 @@
+.navbackground {
+  background-image: url("/images/brand.jpg");
+}
+.searchPopup {
+  left: 0;
+  max-height: 200px;
+  width: 100%;
+  overflow-y: scroll;
+}
