@@ -1,6 +1,8 @@
 import { createRoot } from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
+import { routers } from "./router";
 import "./index.css";
 
 createRoot(document.getElementById("root")).render(
-  <div className="text-pink-800 text-2xl">Hi</div>
+  <RouterProvider router={routers} />
 );
