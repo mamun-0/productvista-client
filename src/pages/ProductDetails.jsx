@@ -8,7 +8,7 @@ export default function ProductDetails() {
   const options = { year: "numeric", month: "long", day: "numeric" };
 
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div className="my-4 flex justify-center items-center">
       <div className="w-1/2 h-3/4">
         <img
           className="w-full h-full object-cover"

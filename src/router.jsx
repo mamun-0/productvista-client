@@ -35,10 +35,15 @@ export const routers = createBrowserRouter([
 ]);
 
 function NavLayout() {
+  const { state } = useNavigation();
   return (
     <>
       <Navbar />
-      <Outlet />
+      {state === "loading" ? (
+        <div style={{ minHeight: "80vh" }}>Loading...</div>
+      ) : (
+        <div style={{ minHeight: "80vh" }}>{<Outlet />}</div>
+      )}
       <Footer />
     </>
   );
