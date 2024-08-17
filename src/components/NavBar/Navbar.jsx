@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useEffect, useRef, useState } from "react";
 import axiosCommon from "../../axios/axiosCommon";
+import { useAuth } from "../../hooks/useAuth";
 export default function Navbar() {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
   const abortRef = new useRef();
-
+  const { user, logOut } = useAuth();
+  console.log(user);
   useEffect(() => {
     if (search) {
       if (abortRef.current) abortRef.current.abort();
@@ -78,20 +80,32 @@ export default function Navbar() {
           </div>
         ) : null}
       </div>
-      <div>
-        <ul className="flex space-x-2 font-semibold">
-          <li className="bg-orange-300 rounded-md hover:bg-orange-600">
-            <Link className="inline-block py-2 px-3" to={"/login"}>
-              Login
-            </Link>
-          </li>
-          <li className="bg-orange-300 rounded-md hover:bg-orange-600">
-            <Link className="inline-block py-2 px-3" to={"/register"}>
-              Register
-            </Link>
-          </li>
-        </ul>
-      </div>
+      {user ? (
+        <div>
+          <ul className="flex space-x-2 font-semibold">
+            <li className="bg-orange-300 rounded-md hover:bg-orange-600">
+              <button className="inline-block py-2 px-3" onClick={logOut}>
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+      ) : (
+        <div>
+          <ul className="flex space-x-2 font-semibold">
+            <li className="bg-orange-300 rounded-md hover:bg-orange-600">
+              <Link className="inline-block py-2 px-3" to={"/login"}>
+                Login
+              </Link>
+            </li>
+            <li className="bg-orange-300 rounded-md hover:bg-orange-600">
+              <Link className="inline-block py-2 px-3" to={"/register"}>
+                Register
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 }
