@@ -5,6 +5,7 @@ import Navbar from "./components/NavBar/Navbar";
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 import axiosCommon from "./axios/axiosCommon";
+import { Footer } from "./components/Footer/Footer";
 
 export const routers = createBrowserRouter([
   {
@@ -38,6 +39,7 @@ function NavLayout() {
     <>
       <Navbar />
       <Outlet />
+      <Footer />
     </>
   );
 }

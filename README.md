@@ -1,8 +1,16 @@
-# React + Vite
+# Project Running Procedures
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Clone the [repo](https://github.com/mamun-0/productvista-client)
+2. Open 💻 terminal at the cloned location and type `npm install`
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Environmental Variables
+
+| Keys                       | Values(Create your own key and set)                       |
+| -------------------------- | --------------------------------------------------------- |
+| VITE_apiKey| From google firebase |
+| VITE_projectId| From google firebase                 |
+| VITE_storageBucket| From google firebase                 |
+| VITE_messagingSenderId| From google firebase                 |
+| VITE_appId| From google firebase                 |
+| VITE_BASE_URL| Deploy server link                 |
