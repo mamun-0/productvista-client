@@ -8,7 +8,6 @@ export default function Navbar() {
   const [results, setResults] = useState([]);
   const abortRef = new useRef();
   const { user, logOut } = useAuth();
-  console.log(user);
   useEffect(() => {
     if (search) {
       if (abortRef.current) abortRef.current.abort();
