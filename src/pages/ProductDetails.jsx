@@ -9,8 +9,12 @@ export default function ProductDetails() {
 
   return (
     <div className="h-screen flex justify-center items-center">
-      <div className="w-1/2">
-        <img className="w-full h-full" src={message.image} alt="" />
+      <div className="w-1/2 h-3/4">
+        <img
+          className="w-full h-full object-cover"
+          src={message.image}
+          alt=""
+        />
         <ul>
           <li>Name : {message.name}</li>
           <li>Brand : {message.brand.name}</li>
